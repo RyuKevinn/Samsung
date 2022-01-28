@@ -1,0 +1,297 @@
+@charset "utf-8";
+
+.rd{
+    border-radius: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.big{
+    transform:scale(1.1);
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.4);
+}
+
+.bg{
+
+    background-image: url(../img/samsung-g78fce8f02_192011.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#main{
+    background-color: rgba(0,0,0,0.4);
+    padding: 150px 0 300px;
+    overflow:hidden;
+    text-align: center;
+    font-size: 30px;
+}
+
+.depth1{
+    /* border: 3px solid white; */
+    max-width:1200px;
+    /* height: 800px; */
+    padding :20px 0 0 30px;;
+    overflow: hidden;
+}
+.depth1> li {
+    float: left;
+}
+.depth1> li+li {
+    padding-left: 20px;
+}
+
+
+/* 1번 */
+#main .depth1 .content1{
+    /* border: 1px solid red; */
+    width: 28%;
+}
+#main .depth1 .content1 .box1 {
+    background: white;
+    /* background-image: url(../img/logo_samsung_black.svg); */
+    height: 80px;
+    margin-bottom:40px;
+}
+#main .depth1 .content1 .box1 img{
+    width: 100%;
+    padding: 15px;
+}
+#main .depth1 .content1 .box2 {
+    /* border: 1px solid red; */
+    height: 380px;
+    margin-bottom: 40px;
+}
+#main .box2 .slideOuter .slideInner .slide0{
+    height: 380px;
+    background-image: url(../img/slide1.jpg);
+}
+#main .box2 .slideOuter .slideInner .slide1{
+    height: 380px;
+    background-image: url(../img/slide2.jpg);
+}
+#main .box2 .slideOuter .slideInner .slide2{
+    background-image: url(../img/slide0.jpeg);
+    height: 380px;
+}
+#main .box2 .slideOuter .slideInner .slide3{
+    background-image: url(../img/slide4.jpg);
+    height: 380px;
+}
+#main .depth1 .content1 .box3 {
+    /* background: violet; */
+    background-image: url(../img/refre.jpeg);
+    height: 250px;
+}
+
+/* 2번 */
+#main .depth1 .content2{
+    /* border: 1px solid yellow; */
+    width: 20%;
+}
+#main .depth1 .content2 .box1 {
+    /* background: blue; */
+    background-image: url(../img/bg3.jpeg);
+    height: 250px;
+    margin: 30px 0 40px;
+}
+#main .depth1 .content2 .box2{
+    /* background: green; */
+    background-image: url(../img/mobile.jpg);
+    height: 200px;
+}
+#main .depth1 .content2 .box3{
+    /* background: white; */
+    background-image: url(../img/mobileac.jpeg);
+    margin-top: 70px;
+    height: 140px;
+    
+}
+#main .depth1 .content2 .box4{
+    background: rgba(0,0,0,0.4);
+    height: 40px;
+    /* width: 50%; */
+    position:relative;
+    /* left:25%; */
+    color:white;
+}
+
+
+#main .searchbox{
+    position:relative;
+    top:-10px;
+    height:55px;
+    overflow: hidden;
+    width:800px;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    transition: all 0.7s;
+    opacity: 0;
+}
+#main .searchbox.on{
+    opacity: 1;
+}
+#main .searchbox input{
+    width: 500px;
+    height:35px;
+    margin: 0 40px;
+    transition: all 1s 0.5s;
+    background: rgba(0,0,0,0.4);
+    border-radius: 20px;
+    color: white;
+    border:1px solid white;
+    padding-left: 15px;
+}
+#main .searchbox button{
+    vertical-align: middle;
+    height: 40px;
+    padding: 0 20px;
+    color:white;
+    background: rgba(0,0,0,0.7);
+    border-radius: 20px;
+    transition: all 1s 0.5s;
+    border:none;
+}
+
+/* 3번 */
+#main .depth1 .content3{
+    /* border: 1px solid white; */
+    width: 25%;
+}
+#main .depth1 .content3 .box1 {
+    /* background: orange; */
+    background-image: url(../img/pc.jpeg);
+    height: 200px;
+}
+#main .depth1 .content3 .box2{
+    /* border: 1px solid skyblue; */
+    height: 200px;
+    margin-bottom: 20px;
+    /* overflow: hidden; */
+    position:relative;
+}
+#main .depth1 .content3 .box2 .sbox1 {
+    width: 30%;
+    background: skyblue;
+    height: 100%;
+    float:left;
+    background-image: url(../img/pcac.jpeg);
+    background-size: 280px;
+    transition: all 0.5s;
+    position:absolute;
+}
+#main .depth1 .content3 .box2 .sbox1.active{
+    width:100%;
+    z-index: 9999
+}
+#main .depth1 .content3 .box2 .sbox2{
+    float:right;
+    width:60%;
+    /* background: white; */
+    height: 40%;
+    transition: all 0.5s;
+    background-image: url(../img/audio.jpeg);
+}
+#main .depth1 .content3 .box2 .sbox2.active{
+    height: 100%;
+    z-index: 9999
+}
+#main .depth1 .content3 .box3{
+    /* background: gray; */
+    background-image: url(../img/lifecategory.webp);
+    height: 140px;
+}
+#main .depth1 .content3 .box4{
+    background-image: url(../img/ev3.jpeg);
+    /* background: pink; */
+    height: 190px;
+}
+
+/* 4번 */
+#main .depth1 .content4{
+    /* border: 1px solid green; */
+    width: 24.5%;
+    /* overflow: hidden; */
+}
+#main .depth1 .content4 .box1{
+    background-image: url(../img/event.jpeg);
+    /* background: mediumaquamarine; */
+    height:300px;
+}
+#main .depth1 .content4 .box2{
+    background-image: url(../img/member.jpeg);
+    /* background: lightgoldenrodyellow; */
+    height: 100px;
+}
+#main .depth1 .content4 .box3{
+    /* background:lightgreen; */
+    background:rgba(0,0,0,0.6);
+    height: 70px;
+    width: 30%;
+    position:relative;
+    top:0;
+    right: -70%;
+}
+#main .depth1 .content4 .box3  i{
+    cursor: pointer;
+    /* color:white; */
+}
+#main .depth1 .content4 .box3 > i{
+    padding: 20px;
+    float: left;
+    color: white;
+    /* text-align: center; */
+}
+#main .depth1 .content4 .box3.on{
+    position:relative;
+    right:0;
+    width:100%
+}
+#main .depth1 .content4 .box3 .sns i{
+    /* display: none; */
+    padding: 15px 20px;
+    font-size: 40px;
+    color:gray;
+}
+/* #main .depth1 .content4 .box3.clk .sns i{
+    display:inline-block;
+} */
+#main .depth1 .content4 .box3 .sns i.on{
+    color: white;
+    transform:scale(1.3);
+    transition: all 0.3s;
+}
+#main .depth1 .content4 .box4{
+    /* border: 1px solid red; */
+    height:200px;
+    /* position:absolute; */
+    overflow:hidden
+}
+#main .depth1 .content4 .box4 .sbox1{
+    background: linen;
+    width: 45%;
+    height: 100%;
+    float:left
+}
+#main .depth1 .content4 .box4 .sbox2{
+    background: lime;
+    width: 45%;
+    height: 100%;
+    float:right;
+}
+#main .depth1 .content4 .box5{
+    background: chocolate;
+    height: 40px;
+
+}
+
+
+#footer{
+    padding-top: 100px;
+    height: 300px;
+    border: 1px solid white;
+    background: black;
+}
