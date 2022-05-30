@@ -4,4 +4,4 @@ https://ryukevinn.github.io/jQuery_Samsung-incomplete/
 
 
 
-<h1>zzzzz</h1>
+<hr></hr>
