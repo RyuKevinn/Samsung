@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codnut Vue3 web component Sample</title>
+  </head>
+  <body>
+    <script async src="./dist/vue-aidt-book.umd.cjs"></script>
+    <script>
+
+      const sendSocketMessage = (component, data) => {
+        if (component) {
+          component.forEach(c => {
+            c.contentWindow.postMessage(data, '*')
+          })
+        }
+      }
+      window.addEventListener('message', async (e) => {
+        if(!e.data.from) {
+          return
+        }
+        const type = e.data.type
+        const data = e.data.msg?.data ?? null
+        const module_type = e.data.msg.module_type ?? null
+        const moudle_id = e.data.msg.module_id
+        const message_type = e.data.msg.type
+        const moduleInfo = e.data.msg.moduleInfo ?? null
+        const quizInfo = e.data.msg.quizInfo ?? null
+        const lmsKey = e.data.msg.lmsKey ?? null
+        const engTempResultDetailId = e.data.msg.engTempResultDetailId ?? null
+        let componentTarget
+        let message
+        switch(type) {
+          case 'sendMsgToTeacher':
+            console.log(type)
+            componentTarget = document.querySelectorAll('#th')
+            message = {
+              "from": "content",
+              "type": "sendMsgToTeacher",
+              "tgtFrame": "navi",
+              "msg": {
+                  "module_id": moudle_id,
+                  "module_type": module_type,
+                  "type": message_type,
+                  "data": data,
+                  "buttonIdx": 1,
+                  "moduleInfo": moduleInfo,
+                  "lmsKey": lmsKey,
+                  "quizInfo": quizInfo,
+                  "engTempResultDetailId":engTempResultDetailId
+              }
+            }
+          break
+          case 'broadcastMsgToStudents':
+            console.log(type)
+            componentTarget = document.querySelectorAll('#st')
+            message = {
+              "from": "content",
+              "type": "broadcastMsgToStudents",
+              "tgtFrame": "navi",
+              "msg": {
+                  "module_id": moudle_id,
+                  "module_type": module_type,
+                  "type": message_type,
+                  "data": data,
+                  "buttonIdx": 0,
+                  "moduleInfo": moduleInfo,
+                  "lmsKey": lmsKey,
+                  "quizInfo": quizInfo,
+                  "engTempResultDetailId":engTempResultDetailId
+              }
+            }
+          break
+        }
+        sendSocketMessage(componentTarget, message)
+      })
+    </script>
+    <div id="viewer_container">
+      <iframe id="th" src="./teacher.html" width="600" height="400" frameborder="0"></iframe>
+      <iframe id="st" src="./student.html" width="600" height="400" frameborder="0"></iframe>
+      <iframe id="th" src="./teacher3.html" width="600" height="400" frameborder="0"></iframe>
+      <iframe id="st" src="./student3.html" width="600" height="400" frameborder="0"></iframe>
+      <iframe id="th" src="./teacher2.html" width="600" height="400" frameborder="0"></iframe>
+      <iframe id="st" src="./student2.html" width="600" height="400" frameborder="0"></iframe>
+      <iframe id="st" src="./student2.html" width="600" height="400" frameborder="0"></iframe>
+
+    </div>
+      <style>
+        #loading {
+          position: fixed;
+          z-indeX: 9999;
+          background: rgba(0,0,0,0.4);
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          color: white;
+          font-size: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #viewer_container {
+          display: flex;
+          gap: 10px;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          /* height: 100vh; */
+          /* overflow: hidden; */
+        }
+        iframe {
+          width: 100%;
+          height: 968px;
+        }
+      </style>
+  </body>
+</html>
